@@ -1,17 +1,15 @@
 import java.io.*;
 
 public class Main {
-    static int k = 1;
+    static int gcd = 1;
     public static void gcd(int n, int m) {
         
         for (int i = 1; i < Math.min(n, m); i++) {
             if (n % i == 0 && m % i == 0) {
-                k *= i;
+                gcd = i;
             }
         }
-        if (k == 1) {
-            k = n * m;
-        }
+    
     }
     public static void main(String[] args) throws Exception {
         // 여기에 코드를 작성해주세요.
@@ -22,6 +20,6 @@ public class Main {
         int m = Integer.parseInt(input[1]);
 
         gcd(n, m);
-        System.out.println(k);
+        System.out.println((n * m) / gcd);
     }
 }
