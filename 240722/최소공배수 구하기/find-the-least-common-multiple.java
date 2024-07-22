@@ -4,7 +4,7 @@ public class Main {
     static int gcd = 1;
     public static void gcd(int n, int m) {
         
-        for (int i = 1; i < Math.min(n, m); i++) {
+        for (int i = 1; i <= Math.min(n, m); i++) {
             if (n % i == 0 && m % i == 0) {
                 gcd = i;
             }
