@@ -12,7 +12,7 @@ public class Main {
         char[] word2Arr = word2.toCharArray();
 
         Arrays.sort(word1Arr);
-        Arrays.sort(word1Arr);
+        Arrays.sort(word2Arr);
 
         if (word1.length() != word2.length()) {
             System.out.println("No");
