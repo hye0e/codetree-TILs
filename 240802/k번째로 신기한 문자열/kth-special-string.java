@@ -11,10 +11,16 @@ public class Main {
         String T = input[2];
         String[] word = new String[n]; 
         for (int i = 0; i < n; i++) {
-            word[i] = br.readLine();
+            String inputWord = br.readLine();
+            if (inputWord.startsWith(T)) {
+                word[i] = inputWord;
+            } else {
+                word[i] = "z";
+            }
+            
         }
 
         Arrays.sort(word);
-        System.out.println(word[k]);
+        System.out.println(word[k - 1]);
     }
 }
