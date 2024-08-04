@@ -23,9 +23,11 @@ public class Main {
             return sb.toString();
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 여기에 코드를 작성해주세요.
-        ObjectClass oc = new ObjectClass("codetree", "L", "13");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        ObjectClass oc = new ObjectClass(input[0], input[1], input[2]);
         System.out.println(oc.toString());
     }
 }
