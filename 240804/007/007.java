@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class Main {
     public static class ObjectClass {
         private String secretCode;
