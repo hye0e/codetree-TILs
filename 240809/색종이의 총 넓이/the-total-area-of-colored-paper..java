@@ -6,7 +6,7 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[][] graph = new int[201][201];
+        int[][] graph = new int[300][300];
         int offset = 100; 
         for (int k = 0; k < N; k++) {
             String[] input = br.readLine().split(" ");
