@@ -48,10 +48,10 @@ public class Main {
             }
         }
 
-        for (int i = xList.get(0); i <= Collections.max(xList); i++) {
+        for (int i = Collections.min(xList); i <= Collections.max(xList); i++) {
             if(!xList.contains(i)) xList.add(i);
         }
-        for (int i = yList.get(0); i <= Collections.max(yList); i++) {
+        for (int i = Collections.min(yList); i <= Collections.max(yList); i++) {
             if(!yList.contains(i)) yList.add(i);
         }
 
