@@ -56,9 +56,11 @@ public class Main {
             for (int i = Collections.min(yList); i <= Collections.max(yList); i++) {
                 if(!yList.contains(i)) yList.add(i);
             }
+
+            System.out.println(xList.size() * yList.size());
         }
         
 
-        System.out.println(xList.size() * yList.size());
+        
     }
 }
