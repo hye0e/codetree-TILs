@@ -40,11 +40,19 @@ public class Main {
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph[i].length; j++) {
                 if (graph[i][j] == 1) {
+                    
                     if(!xList.contains(i)) xList.add(i);
                     if(!yList.contains(j)) yList.add(j);
                 }
             
             }
+        }
+
+        for (int i = xList.get(0); i <= Collections.max(xList); i++) {
+            if(!xList.contains(i)) xList.add(i);
+        }
+        for (int i = yList.get(0); i <= Collections.max(yList); i++) {
+            if(!yList.contains(i)) yList.add(i);
         }
 
         System.out.println(xList.size() * yList.size());
