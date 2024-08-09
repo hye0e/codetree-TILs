@@ -48,12 +48,16 @@ public class Main {
             }
         }
 
-        for (int i = Collections.min(xList); i <= Collections.max(xList); i++) {
-            if(!xList.contains(i)) xList.add(i);
+        if (xList.isEmpty() || yList.isEmpty()) System.out.println(0);
+        else {
+            for (int i = Collections.min(xList); i <= Collections.max(xList); i++) {
+                if(!xList.contains(i)) xList.add(i);
+            }
+            for (int i = Collections.min(yList); i <= Collections.max(yList); i++) {
+                if(!yList.contains(i)) yList.add(i);
+            }
         }
-        for (int i = Collections.min(yList); i <= Collections.max(yList); i++) {
-            if(!yList.contains(i)) yList.add(i);
-        }
+        
 
         System.out.println(xList.size() * yList.size());
     }
