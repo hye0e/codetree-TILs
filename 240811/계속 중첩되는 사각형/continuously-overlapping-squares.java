@@ -10,8 +10,8 @@ public class Main {
         int now = 1; // 1: 빨간색 2: 파란색
     
         for (int k = 0; k < N; k++) {
-            if (k != 0 && now == 1) now = 2;
-
+            if (k % 2 == 0) now = 1;
+            else now = 2;
             StringTokenizer st = new StringTokenizer(br.readLine());
             
             int x1 = Integer.parseInt(st.nextToken()) + offset;
