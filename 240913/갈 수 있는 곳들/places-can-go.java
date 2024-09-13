@@ -52,7 +52,7 @@ public class Main {
     public static void bfs(int x, int y) {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(x, y));
-        
+        visited[x][y] = true;
         
         while (!queue.isEmpty()) {
             Node node = queue.poll();
