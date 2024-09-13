@@ -10,10 +10,10 @@ public class Main {
         n = Integer.parseInt(st.nextToken());
         t = Integer.parseInt(st.nextToken());
 
-        int[][] grid = new int[n][3];
-        int[][] new_grid = new int[n][3];
+        int[][] grid = new int[3][n];
+        int[][] new_grid = new int[3][n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 3; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
                 grid[i][j] = Integer.parseInt(st.nextToken());
@@ -22,9 +22,9 @@ public class Main {
 
         while (t-- > 0) {
             // int temp = grid[0][0];
-            int temp2 = grid[n - 1][n - 1];
+            int temp2 = grid[2][n - 1];
 
-            for(int i = n - 1; i >= 1; i--) { // 2, 1
+            for(int i = 2; i >= 1; i--) { // 2, 1
                 for (int j = n - 1; j >= 1; j--) { // 2, 1
                     grid[i][j] = grid[i][j - 1];
                 }  
@@ -38,7 +38,7 @@ public class Main {
             grid[0][0] = temp2;
         }
         
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(grid[i][j] + " ");
             }
