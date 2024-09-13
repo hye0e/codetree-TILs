@@ -52,7 +52,7 @@ public class Main {
         int result = 1;
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            result = node.cnt;
+            
             for (int i = 0; i < 4; i++) {
                 int nx = node.x + dx[i];
                 int ny = node.y + dy[i];
@@ -60,7 +60,7 @@ public class Main {
                 if (0 <= nx && nx < n && 0 <= ny && ny < n) {
                     if (visited[nx][ny]) continue;
                     if (graph[nx][ny] == 1) continue;
-                
+                    result = node.cnt;
                     visited[nx][ny] = true;
                     queue.add(new Node(nx, ny, node.cnt + 1));
                     
