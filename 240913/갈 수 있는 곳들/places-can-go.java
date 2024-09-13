@@ -6,15 +6,13 @@ public class Main {
     static int[][] graph;
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, 1, -1};
-
+    static boolean[][] visited;
     public static class Node {
         int x;
         int y;
-        int cnt;
-        public Node(int x, int y, int cnt) {
+        public Node(int x, int y) {
             this.x = x;
             this.y = y;
-            this.cnt = cnt;
         }
     }
     public static void main(String[] args) throws Exception {
@@ -26,6 +24,7 @@ public class Main {
         k = Integer.parseInt(st.nextToken());
 
         graph = new int[n][n];
+        visited = new boolean[n][n];
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -39,17 +38,22 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            answer += bfs(x - 1, y - 1);
+            bfs(x - 1, y - 1);
         }
+
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                if(visited[i][j])
+                    answer++;
 
         System.out.println(answer);
     }
 
-    public static int bfs(int x, int y) {
+    public static void bfs(int x, int y) {
         Queue<Node> queue = new LinkedList<>();
-        queue.add(new Node(x, y, 0));
-        boolean[][] visited = new boolean[n][n];
-        int result = 1;
+        queue.add(new Node(x, y));
+        
+        
         while (!queue.isEmpty()) {
             Node node = queue.poll();
             
@@ -60,13 +64,10 @@ public class Main {
                 if (0 <= nx && nx < n && 0 <= ny && ny < n) {
                     if (visited[nx][ny]) continue;
                     if (graph[nx][ny] == 1) continue;
-                    result = node.cnt;
                     visited[nx][ny] = true;
-                    queue.add(new Node(nx, ny, node.cnt + 1));
-                    
+                    queue.add(new Node(nx, ny));
                 }
             }
         }
-        return result;
     }
 }
