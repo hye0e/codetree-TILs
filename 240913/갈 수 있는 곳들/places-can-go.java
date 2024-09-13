@@ -49,7 +49,7 @@ public class Main {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(x, y, 0));
         boolean[][] visited = new boolean[n][n];
-        int result = 0;
+        int result = 1;
         while (!queue.isEmpty()) {
             Node node = queue.poll();
             result = node.cnt;
